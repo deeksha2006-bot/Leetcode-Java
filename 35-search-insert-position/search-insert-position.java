@@ -6,8 +6,7 @@ class Solution {
         while (left <= right) {
             int mid = (left + right) / 2;
 
-            if (nums[mid] == target) 
-            {
+            if (nums[mid] == target) {
                 return mid;
             }
             else if (nums[mid] < target) {
