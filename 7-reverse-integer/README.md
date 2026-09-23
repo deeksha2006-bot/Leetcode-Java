@@ -13,7 +13,7 @@
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> x = -123
+<strong>Input:</strong> x =-123
 <strong>Output:</strong> -321
 </pre>
 
