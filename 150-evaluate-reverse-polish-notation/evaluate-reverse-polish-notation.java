@@ -1,9 +1,9 @@
 class Solution {
-    public int evalRPN(String[] t) {
+    public int evalRPN(String[] tokens) {
         Stack<Integer> stack=new Stack<>();
-        for(int i=0; i<t.length; i++)
+        for(int i=0; i<tokens.length; i++)
         {
-            String s=t[i];
+            String s=tokens[i];
             if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/"))
             {
                 int b=stack.pop();
