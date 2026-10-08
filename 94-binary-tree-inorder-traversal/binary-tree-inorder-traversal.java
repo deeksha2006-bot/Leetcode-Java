@@ -1,6 +1,6 @@
 /**
  * Definition for a binary tree node.
- * public class TreeNode {  //inorder--left|root|right
+ * public class TreeNode {
  *     int val;
  *     TreeNode left;
  *     TreeNode right;
@@ -14,19 +14,21 @@
  * }
  */
 class Solution {
-    List<Integer> list=new ArrayList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
-        inorder(root);
-        return list;
-    }
-    void inorder(TreeNode root)
-    {
-        if(root==null)
+        List<Integer> list=new ArrayList<>();
+        Stack<TreeNode> stack=new Stack<>();
+        TreeNode current=root;
+        while(current !=null || !stack.isEmpty())
         {
-            return;
+            while(current!=null)
+            {
+                stack.push(current);
+                current=current.left;
+            }
+            current=stack.pop();
+            list.add(current.val);
+            current=current.right;
         }
-        inorder(root.left);
-        list.add(root.val);
-        inorder(root.right);
+        return list;
     }
 }
